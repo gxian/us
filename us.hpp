@@ -12,30 +12,29 @@ namespace us
 
   };
 
-
-    void RestoreContext(const Context* c)
-    {
-      __asm__ (
-        "movq	16(%rdi), %rsi\n\t"
-        "movq	24(%rdi), %rdx\n\t"
-        "movq	32(%rdi), %rcx\n\t"
-        "movq	40(%rdi), %r8\n\t"
-        "movq	48(%rdi), %r9\n\t"
-        "movq	56(%rdi), %rax\n\t"
-        "movq	64(%rdi), %rbx\n\t"
-        "movq	72(%rdi), %rbp\n\t"
-        "movq	80(%rdi), %r10\n\t"
-        "movq	88(%rdi), %r11\n\t"
-        "movq	96(%rdi), %r12\n\t"
-        "movq	104(%rdi), %r13\n\t"
-        "movq	112(%rdi), %r14\n\t"
-        "movq	120(%rdi), %r15\n\t"
-        "movq	184(%rdi), %rsp\n\t"
-        "pushq	160(%rdi)\n\t"
-        "movq	8(%rdi), %rdi\n\t"
-        "ret\n\t"
-               );
-    }
+  void RestoreContext(const Context* c)
+  {
+    __asm__ (
+      "movq	16(%rdi), %rsi\n\t"
+      "movq	24(%rdi), %rdx\n\t"
+      "movq	32(%rdi), %rcx\n\t"
+      "movq	40(%rdi), %r8\n\t"
+      "movq	48(%rdi), %r9\n\t"
+      "movq	56(%rdi), %rax\n\t"
+      "movq	64(%rdi), %rbx\n\t"
+      "movq	72(%rdi), %rbp\n\t"
+      "movq	80(%rdi), %r10\n\t"
+      "movq	88(%rdi), %r11\n\t"
+      "movq	96(%rdi), %r12\n\t"
+      "movq	104(%rdi), %r13\n\t"
+      "movq	112(%rdi), %r14\n\t"
+      "movq	120(%rdi), %r15\n\t"
+      "movq	184(%rdi), %rsp\n\t"
+      "pushq	160(%rdi)\n\t"
+      "movq	8(%rdi), %rdi\n\t"
+      "ret\n\t"
+             );
+  }
 
     int SaveContext(Context* c)
     {
