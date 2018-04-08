@@ -23,11 +23,7 @@ else()
         set(CMAKE_C_COMPILER "clang")
         set(CMAKE_CXX_COMPILER "clang++")
     endif()
-    if(WITHOUT_ASAN)
-        set(CMAKE_CXX_FLAGS   "${CMAKE_CXX_FLAGS} -Wall -g -O2")
-    else()
-        set(CMAKE_CXX_FLAGS   "${CMAKE_CXX_FLAGS} -Wall -g -O2 -fsanitize=address -fno-omit-frame-pointer")
-    endif(WITHOUT_ASAN)
+    set(CMAKE_CXX_FLAGS   "${CMAKE_CXX_FLAGS} -Wall -g -O2")
 endif(MSVC)
 
 
@@ -40,7 +36,7 @@ else()
 endif()
 
 include_directories("${PROJECT_SOURCE_DIR}")
-include_directories("${PROJECT_SOURCE_DIR}/dep")
+include_directories("${PROJECT_SOURCE_DIR}/../dep")
 file(GLOB SRC *.cpp)
 
 # service bianry
