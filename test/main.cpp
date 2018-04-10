@@ -62,7 +62,7 @@ void test_json_msgpack() {
     ta.a3 = 3;
     ta.a4 = "4444";
     ta.a5 = "55555";
-    ta.a6 = "666666";
+    ta.a6 = "中文测试";
     ta.a7 = {7, 7, 7, 7, 7, 7, 7};
     ta.a8 = {8, 8, 8, 8, 8, 8, 8, 8};
     ta.a9 = {"9", "9", "9", "9", "9", "9", "9", "9", "9"};
@@ -74,12 +74,16 @@ void test_json_msgpack() {
     tb.b3 = {ta, ta, ta};
 
     // json j = tb;
+    // std::cout << "struct to json: " << j.dump() << ", len: " << j.dump().size() << std::endl;
     // auto pack = json::to_msgpack(j);
+    // auto conv_back = json::from_msgpack(pack);
+    // std::cout << "len: " << pack.size() << ", msgpack to json: " << conv_back.dump() << std::endl;
+    // return;
 
     auto t1 = std::chrono::high_resolution_clock::now();
     for (int i = 0; i < 100000; ++i) {
-        // json j = ta;
-        json j = tb;
+        json j = ta;
+        // json j = tb;
         // TestA ta1 = j;
         // TestB tb1 = j;
         // auto pack = json::to_msgpack(j);
