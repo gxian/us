@@ -37,6 +37,7 @@ endif()
 
 include_directories("${PROJECT_SOURCE_DIR}")
 include_directories("${PROJECT_SOURCE_DIR}/../dep")
+include_directories("${PROJECT_SOURCE_DIR}/../tcp")
 file(GLOB SRC *.cpp)
 
 # service bianry
