@@ -152,11 +152,9 @@ private:
                 StartWrite(task->buf.data() + task->transfer,
                            task->total - task->transfer);
             } catch (const std::exception &e) {
-                // LOG_ERROR("send msg exception: {}", e.what());
                 return;
             }
         } else {
-            // LOG_ERROR("connection write error: {}", ec.message());
             Close();
         }
     }
@@ -175,8 +173,6 @@ private:
                             start_pos_ += offset;
                             offset = end_pos_ - start_pos_;
                             if (start_pos_ > end_pos_) {
-                                // LOG_ERROR(
-                                // "connection read error: wrong format");
                                 Close();
                                 return;
                             }
@@ -184,14 +180,12 @@ private:
                         }
                     } while (offset != 0);
                 } catch (const std::exception &e) {
-                    // LOG_ERROR("decode/handle msg exception: {}", e.what());
                     Close();
                     return;
                 }
             }
             StartRead();
         } else {
-            // LOG_ERROR("connection read error: {}", ec.message());
             Close();
         }
     }

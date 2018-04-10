@@ -29,7 +29,6 @@ public:
                 ConnPtr(new Connection<T>(ios_, encoder_, decoder_)));
             conn_->socket().connect((*iter).endpoint(), ec);
             if (ec) {
-                // LOG_ERROR("tcp client connect failed: {}", ec.message());
                 return ec.message();
             }
             conn_->Start(handler, ondisconn);

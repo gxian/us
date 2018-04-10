@@ -62,8 +62,6 @@ private:
 
             StartAccept();
         } else {
-            // LOG_ERROR("accept failed! errno:{}, error:{}", error.value(),
-                    //   error.message().c_str());
         }
     }
 
