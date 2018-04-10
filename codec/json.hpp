@@ -1,10 +1,9 @@
 #pragma once
-#ifndef XL_UTILS_CODEC_JSON_H_
 
 #include "json/json.hpp"
 
-namespace xl {
-namespace utils {
+namespace us {
+namespace codec {
 
 using json = nlohmann::json;
 using Buffer = std::vector<uint8_t>;
@@ -39,5 +38,3 @@ inline size_t Decode(uint8_t *buf, size_t len, json &msg) {
 }
 }
 }
-
-#endif // XL_UTILS_CODEC_JSON_H_
